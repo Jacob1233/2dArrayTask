@@ -6,7 +6,13 @@ public class Main {
 		
 		Array2DExercises array = new Array2DExercises();
 		
+		int[][] a = new int[][]{
+			  { 5, 10 },
+			  { 15, 20 },
+			};
 		
+		
+		System.out.println(array.getTotal(a));
 
 	}
 
