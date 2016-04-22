@@ -1,85 +1,139 @@
 public class Array2DExercises {
-	
-		// return the total of all the values in the array.
-		public static int getTotal(int[][] a) {
-			
-			int sum = 0;
-	        for(int i = 0; i < a.length; i++) {
-	                for(int j = 0; j < a[i].length; j++) {
-	                        sum += a[i][j];
-	                }
-	        }
-	        return sum;
+
+	// return the total of all the values in the array.
+	public static int getTotal(int[][] a) {
+
+		int sum = 0;
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a[i].length; j++) {
+				sum += a[i][j];
+			}
 		}
-		
-		// return the average of all the values in the array.
-		public static double getAverage(int[][] a) {
-			return -1;
+		return sum;
+	}
+
+	// return the average of all the values in the array.
+	public static double getAverage(int[][] a) {
+		return -1; // Solved by Michael. Waiting for merge.
+	}
+
+	// return the total of the values in the specified row.
+	public static int getRowTotal(int[][] a, int row) {
+
+		int sum = 0;
+		for (int i = 0; i < a.length; i++) {
+			sum += a[row][i];
 		}
-		
-		// return the total of the values in the specified row.
-		public static int getRowTotal(int[][] a, int row) {
-			return -1;
+		return sum;
+	}
+
+	// return the total of the values in the specified column.
+	public static int getColumnTotal(int[][] a, int column) {
+
+		// Assume square array
+		int sum = 0;
+		for (int i = 0; i < a.length; i++) {
+			sum += a[i][column];
 		}
-		
-		// return the total of the values in the specified column.
-		public static int getColumnTotal(int[][] a, int column) {
-			return -1;
+		return sum;
+	}
+
+	// return the highest value in the specified row of the array.
+	public static int getHighestInRow(int[][] a, int row) {
+
+		int highest = a[row][0]; // Has to be defined by a number in array
+		for (int i = 0; i < a.length; i++) {
+			if (a[row][i] > highest) {
+				highest = a[row][i];
+			}
 		}
-		
-		// return the highest value in the specified row of the array.
-		public static int getHighestInRow(int[][] a, int row) {
-			return -1;
+		return highest;
+	}
+
+	// return the lowest value in the specified row of the array.
+	public static int getLowestInRow(int[][] a, int row) {
+
+		int lowest = a[row][0]; // Has to be defined by a number in array
+		for (int i = 0; i < a.length; i++) {
+			if (a[row][i] < lowest) {
+				lowest = a[row][i];
+			}
 		}
-		
-		// return the lowest value in the specified row of the array.
-		public static int getLowestInRow(int[][] a, int row) {
-			return -1;
+		return lowest;
+	}
+
+	// return the lowest value in the specified column of the array
+	public static int getHighestInColumn(int[][] a, int column) {
+
+		int highest = a[0][column]; // Has to be defined by a number in array
+		for (int i = 0; i < a.length; i++) {
+			if (a[i][column] > highest) {
+				highest = a[i][column];
+			}
 		}
-		
-		// return the lowest value in the specified column of the array
-		public static int getHighestInColumn(int[][] a, int column) {
-			return -1;
+		return highest;
+	}
+
+	// return the highest value in the specified column of the array
+	public static int getLowestInColumn(int[][] a, int column) {
+
+		int lowest = a[0][column]; // Has to be defined by a number in array
+		for (int i = 0; i < a.length; i++) {
+			if (a[i][column] < lowest) {
+				lowest = a[i][column];
+			}
 		}
-		
-		// return the highest value in the specified column of the array
-		public static int getLowestInColumn(int[][] a, int column) {
-			return -1;
+		return lowest;
+	}
+
+	// return the diagonal sum, bottom left to top right
+	public static int getBottomLeftToTopRightDiagonalSum(int[][] a) {
+
+		int numColumns = a.length;
+		int topRight = a[0][numColumns];
+		int bottomLeft = 0; // Cannot be optional
+		for (int i = 0; i < a.length; i++) {
+			bottomLeft = a[i][0]; // This is a promise
 		}
-		
-		// return the diagonal sum, bottom left to top right
-		public static int getBottomLeftToTopRightDiagonalSum(int[][] a) {
-			return -1;
+		return bottomLeft + topRight;
+	}
+
+	// return the diagonal sum, top left to bottom right
+	public static int getTopLeftToBottomRightDiagonalSum(int[][] a) {
+
+		int topLeft = a[0][0];
+		int bottomRight = 0; // Cannot be optional
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a[i].length; j++) {
+				bottomRight = a[i][j]; // This is a promise
+			}
 		}
-		
-		// return the diagonal sum, top left to bottom right
-		public static int getTopLeftToBottomRightDiagonalSum(int[][] a) {
-			return -1;
-		}
-		
-		// return true if the array is sorted low to high
-		public static boolean isArraySorted(int[][] a) {
-			return false;
-		}
-		
-		// return true if array is sorted high to low
-		public static boolean isArrayReversed(int[][] a) {
-			return false;
-		}
-		
-		// return true if array is jagged
-		public static boolean isJaggedArray(int[][] a) {
-			return false;
-		}
-		
-		// return true if array is square (n x n)
-		public static boolean isSquareArray(int[][] a) {
-			return false;
-		}
-		
-		// return true if array is rectangular (n x m)
-		public static boolean isRectangularArray(int[][] a) {
-			return false;
-		}
+		return bottomRight + topLeft;
+	}
+
+	// return true if the array is sorted low to high
+	public static boolean isArraySorted(int[][] a) {
+		return false;
+	}
+
+	// return true if array is sorted high to low
+	public static boolean isArrayReversed(int[][] a) {
+		return false;
+	}
+
+	// return true if array is jagged
+	public static boolean isJaggedArray(int[][] a) {
+		return false;
+	}
+
+	// return true if array is square (n x n)
+	public static boolean isSquareArray(int[][] a) {
+		return false;
+	}
+
+	// return true if array is rectangular (n x m)
+	public static boolean isRectangularArray(int[][] a) {
+		return false;
+	}
 
 }
