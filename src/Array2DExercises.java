@@ -1,4 +1,3 @@
-
 public class Array2DExercises {
 	
 		// return the total of all the values in the array.

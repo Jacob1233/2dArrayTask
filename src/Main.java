@@ -2,9 +2,6 @@
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		Array2DExercises array = new Array2DExercises();
 		
 		int[][] a = new int[][]{
 			  { 5, 10 },
@@ -12,7 +9,7 @@ public class Main {
 			};
 		
 		
-		System.out.println(array.getTotal(a));
+		System.out.println(Array2DExercises.getTotal(a));
 
 	}
 
