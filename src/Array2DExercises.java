@@ -113,27 +113,85 @@ public class Array2DExercises {
 
 	// return true if the array is sorted low to high
 	public static boolean isArraySorted(int[][] a) {
-		return false;
+		for (int i = 0; i < a.length; i++) {
+			int[] array = a[i];
+			if ( isRowSorted(array) == false) {
+				return false;
+			}
+		}		
+		return true;
 	}
 
 	// return true if array is sorted high to low
 	public static boolean isArrayReversed(int[][] a) {
-		return false;
+		for (int i = 0; i < a.length; i++) {
+			int[] array = a[i];
+			if ( isRowInverse(array) == false) {
+				return false;
+			}
+		}		
+		return true;
 	}
 
 	// return true if array is jagged
 	public static boolean isJaggedArray(int[][] a) {
+		for (int i = 0; i < a.length; i++) {
+			if (a[0].length != a[i].length) {
+				return true;
+			}
+			
+		}		
 		return false;
 	}
 
 	// return true if array is square (n x n)
 	public static boolean isSquareArray(int[][] a) {
-		return false;
+		boolean rowsAreSame = true;
+		for (int i = 0; i < a.length; i++) {
+			if (a[0].length != a[i].length) {
+				rowsAreSame = false;
+			}
+		}
+		if (rowsAreSame == true && a.length == a[0].length) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	// return true if array is rectangular (n x m)
 	public static boolean isRectangularArray(int[][] a) {
-		return false;
+		for (int i = 0; i < a.length; i++) {
+			if (a[0].length != a[i].length) {
+				return false;
+			}
+			
+		}		
+		return true;
+	}
+	
+	public static boolean isRowSorted(int[] a) {
+		int prev = a[0];
+		for (int i = 0; i < a.length; i++) {
+			if (a[i] >= prev) {
+				
+			} else {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public static boolean isRowInverse(int[] a) {
+		int prev = a[0];
+		for (int i = 0; i < a.length; i++) {
+			if (a[i] <= prev) {
+				
+			} else {
+				return false;
+			}
+		}
+		return true;
 	}
 
 }
