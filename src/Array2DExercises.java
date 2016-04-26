@@ -222,28 +222,4 @@ public class Array2DExercises {
 		return true;
 	}
 
-	public static boolean isRowSorted(int[] a) {
-		int prev = a[0];
-		for (int i = 0; i < a.length; i++) {
-			if (a[i] >= prev) {
-
-			} else {
-				return false;
-			}
-		}
-		return true;
-	}
-
-	public static boolean isRowInverse(int[] a) {
-		int prev = a[0];
-		for (int i = 0; i < a.length; i++) {
-			if (a[i] <= prev) {
-
-			} else {
-				return false;
-			}
-		}
-		return true;
-	}
-
 }
