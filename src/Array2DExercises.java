@@ -14,7 +14,16 @@ public class Array2DExercises {
 
 	// return the average of all the values in the array.
 	public static double getAverage(int[][] a) {
-		return -1; // Solved by Michael. Waiting for merge.
+		double sum = 0;
+		double count = 0;
+        for(int i = 0; i < a.length; i++) {
+                for(int j = 0; j < a[i].length; j++) {
+                        sum += a[i][j];
+        	            count = count +1;
+                       
+                }
+        }
+        return (sum/count);
 	}
 
 	// return the total of the values in the specified row.
