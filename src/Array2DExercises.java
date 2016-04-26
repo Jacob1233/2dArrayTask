@@ -16,14 +16,13 @@ public class Array2DExercises {
 	public static double getAverage(int[][] a) {
 		double sum = 0;
 		double count = 0;
-        for(int i = 0; i < a.length; i++) {
-                for(int j = 0; j < a[i].length; j++) {
-                        sum += a[i][j];
-        	            count = count +1;
-                       
-                }
-        }
-        return (sum/count);
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a[i].length; j++) {
+				sum += a[i][j];
+				count = count + 1;
+			}
+		}
+		return (sum / count);
 	}
 
 	// return the total of the values in the specified row.
@@ -122,23 +121,67 @@ public class Array2DExercises {
 
 	// return true if the array is sorted low to high
 	public static boolean isArraySorted(int[][] a) {
+		int sum = 0;
 		for (int i = 0; i < a.length; i++) {
-			int[] array = a[i];
-			if ( isRowSorted(array) == false) {
+			for (int j = 0; j < a[i].length; j++) {
+				sum++;
+			}
+		}
+
+		int[] all = new int[sum];
+		
+		int counter = 0;
+		
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a[i].length; j++) {
+				all[counter] = a[i][j];
+				counter++;
+			}			
+		}
+		
+		int prev = all[0];
+		
+		for (int i = 0; i < all.length; i++) {
+			if (all[i] >= prev) {
+				prev = all[i];
+			} else {
 				return false;
 			}
-		}		
+		}
+		
 		return true;
 	}
 
 	// return true if array is sorted high to low
 	public static boolean isArrayReversed(int[][] a) {
+		int sum = 0;
 		for (int i = 0; i < a.length; i++) {
-			int[] array = a[i];
-			if ( isRowInverse(array) == false) {
+			for (int j = 0; j < a[i].length; j++) {
+				sum++;
+			}
+		}
+
+		int[] all = new int[sum];
+		
+		int counter = 0;
+		
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a[i].length; j++) {
+				all[counter] = a[i][j];
+				counter++;
+			}			
+		}
+		
+		int prev = all[0];
+		
+		for (int i = 0; i < all.length; i++) {
+			if (all[i] <= prev) {
+				prev = all[i];
+			} else {
 				return false;
 			}
-		}		
+		}
+		
 		return true;
 	}
 
@@ -148,8 +191,8 @@ public class Array2DExercises {
 			if (a[0].length != a[i].length) {
 				return true;
 			}
-			
-		}		
+
+		}
 		return false;
 	}
 
@@ -174,28 +217,28 @@ public class Array2DExercises {
 			if (a[0].length != a[i].length) {
 				return false;
 			}
-			
-		}		
+
+		}
 		return true;
 	}
-	
+
 	public static boolean isRowSorted(int[] a) {
 		int prev = a[0];
 		for (int i = 0; i < a.length; i++) {
 			if (a[i] >= prev) {
-				
+
 			} else {
 				return false;
 			}
 		}
 		return true;
 	}
-	
+
 	public static boolean isRowInverse(int[] a) {
 		int prev = a[0];
 		for (int i = 0; i < a.length; i++) {
 			if (a[i] <= prev) {
-				
+
 			} else {
 				return false;
 			}
