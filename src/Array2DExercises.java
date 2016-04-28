@@ -27,7 +27,6 @@ public class Array2DExercises {
 
 	// return the total of the values in the specified row.
 	public static int getRowTotal(int[][] a, int row) {
-
 		int sum = 0;
 		for (int i = 0; i < a.length; i++) {
 			sum += a[row][i];
@@ -97,25 +96,18 @@ public class Array2DExercises {
 	// return the diagonal sum, bottom left to top right
 	public static int getBottomLeftToTopRightDiagonalSum(int[][] a) {
 
-		int numColumns = a.length;
-		int topRight = a[0][numColumns];
-		int bottomLeft = 0; // Cannot be optional
-		for (int i = 0; i < a.length; i++) {
-			bottomLeft = a[i][0]; // This is a promise
-		}
+		int bottomLeft = a[a.length - 1][0];
+		int topRight = a[0][a[0].length - 1];
+		
 		return bottomLeft + topRight;
 	}
 
 	// return the diagonal sum, top left to bottom right
 	public static int getTopLeftToBottomRightDiagonalSum(int[][] a) {
 
+		int bottomRight =  a[a.length - 1][a[a.length - 1].length - 1];
 		int topLeft = a[0][0];
-		int bottomRight = 0; // Cannot be optional
-		for (int i = 0; i < a.length; i++) {
-			for (int j = 0; j < a[i].length; j++) {
-				bottomRight = a[i][j]; // This is a promise
-			}
-		}
+		
 		return bottomRight + topLeft;
 	}
 

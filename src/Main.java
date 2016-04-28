@@ -9,7 +9,7 @@ public class Main {
 			};
 		
 		// Test the method
-		System.out.println(Array2DExercises.isArrayReversed(a));
+		System.out.println(Array2DExercises.getTopLeftToBottomRightDiagonalSum(a));
 
 	}
 
